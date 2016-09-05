@@ -1,0 +1,4 @@
+option to add multiple reminder days
+option to log x last passwords and check for using them when creating a new one
+
+create new initial config file to get the new password check and reminder days 
