@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">
+		
+		<record id="password_policy_sheduler_scheduled_action" model="ir.cron">
+			<field name="name">Password policy scheduler</field>
+			<field name="function" >run_password_scheduler</field>
+			<field name="args" >()</field>
+			<field name="numbercall">-1</field>
+			<field name="active" >True</field>
+			<field name="model" >res.config.password_policy.sheduler</field>
+			<field name="interval_type">days</field>
+			<field name="interval_number">1</field>
+			<field name="nextcall" eval="((DateTime.now() + timedelta(days=1)).replace(hour=3, minute=0)).strftime('%Y-%m-%d %H:%M:%S')" />
+			<field name="doall" >False</field>
+			<field name="priority">5</field>
+			<field name="user_id" ref="base.user_root" />
+			
+			
+		</record>
+	
+	</data>
+</openerp>
